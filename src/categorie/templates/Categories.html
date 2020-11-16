@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+{% for cat in allCat %}
+ <div class="col-md-3 mt-4">
+   <div class="card index-liv" >
+     <a href="{% url 'blog:LivreCat' cat.id %}" class="">
+     <img src="{{cat.img.url}}" class="card-img-top" alt="...">
+     <div class="card-body">
+     <h5 class="card-title">{{cat.nom|truncatewords:1}}</h5>
+     </a>
+    </div>
+  </div>
+ </div>
+
+ {% endfor %}
+{% endblock body %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+  <span class="border border-info mb-4 nomcat rounded-pill">
+    <h2>{{cat.nom}}</h2>
+  </span>
+  <div class="imgcat mb-5">
+      <img class="imgcat" src="{{cat.img.url}}" class="card-img-top cat" alt="...">
+  </div>
+
+    {% for livre in listLivre %}
+     <div class="col-md-3 mt-4">
+       <div class="card index-liv" >
+         <img src="{{livre.img.url}}" class="card-img-top" alt="...">
+         <div class="card-body">
+           <h5 class="card-title">{{livre.titre|truncatewords:1}}</h5>
+           <!--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+           <a href="{% url 'blog:detLivre' livre.id %}" class="btn btn-outline-info">details</a>
+           <a href="{% url 'panie:setPanier' livre.id %}" class="btn btn btn-outline-warning">add card</a>
+        </div>
+      </div>
+     </div>
+
+    {% endfor %}
+{% endblock body %}

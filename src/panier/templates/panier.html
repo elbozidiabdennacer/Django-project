@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% for livre in panier %}
+<div class="card mb-3 livre panie">
+      <div class="row no-gutters">
+        <div class="col-md-1 img">
+          <img src="{{livre.img.url}}" class="card-img img" alt="...">
+        </div>
+        <div class="col-md-4">
+          <div class="card-body">
+            <h5 class="card-title">{{livre.titre}}</h5>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h5 class="card-body">{{livre.prix}} Dhs</h5>
+        </div>
+        <div class="col-md-3">
+          <h5 class="card-body"> <a href="{% url 'panie:rmLivre' livre.id %}">x</a></h5>
+        </div>
+      </div>
+</div>
+{% endfor %}
+
+  <div class="card mb-3 livre panie total">
+
+      <div class="row no-gutters">
+        <div class="col-md-5 total">
+          <h4 class="card-body">Total :</h4>
+        </div>
+
+        <div class="col-md-3">
+          <h5 class="card-body"> {{ total }} Dhs</h5>
+        </div>
+        {% if panier.count > 0 %}
+            <div class="col-md-3">
+            <h5 class="card-body"><a href="{% url 'panie:setCommande' %}" class="btn btn-success">buy now</a></h5>
+            </div>
+        {% endif %}
+      </div>
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,47 @@
+.blform{
+  margin-left: auto;
+  margin-right: auto;
+  width: 6em;
+}
+.livre{
+  width: 100%;
+}
+.panie{
+  width: 70%;
+  height: 90px;
+}
+.panie .img{
+  height: 90px;
+  width: 70px;
+}
+.total{
+  color: blue;
+  border: None;
+}
+
+.livre img{
+  width:250px;
+  height:400px;
+}
+.index-liv{
+  background-color: #FFFAFA;
+  border-radius: 20px;
+}
+
+.index-liv img{
+  width:200px;
+  height:250px;
+}
+
+.imgcat{
+  width: 100%;
+  height: 460px;
+  border-radius: 20px;
+}
+
+.nomcat{
+   width: 100%;
+   font-size: 60px;
+   text-align: center;
+   background-color: #F0FFFF;
+}
